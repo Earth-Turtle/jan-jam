@@ -3,7 +3,7 @@ extends Node2D
 
 var max_velocity:float = 500.0
 var velocity:Vector2 = Vector2(0.0, 0.0)
-var acceleration:float = 2000.0
+var acceleration:float = 3000.0
 var deceleration:float = 3000.0
 
 

@@ -5,4 +5,9 @@
 [node name="Main" type="Node"]
 
 [node name="player" parent="." instance=ExtResource("1_jfbpv")]
-position = Vector2(584, 325)
+position = Vector2(1160, 545)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 480.0
+offset_bottom = 1080.0
+color = Color(0.39635, 0.235788, 0.655669, 1)
