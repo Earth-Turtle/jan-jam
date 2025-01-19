@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhemy5xe7i3pb"]
+
+[ext_resource type="Texture2D" uid="uid://dg3ihiiarvf1e" path="res://resources/title.png" id="1_o6rv3"]
+[ext_resource type="Texture2D" uid="uid://buen8omv8amnn" path="res://resources/press_to_start.png" id="2_ehmjv"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 330
+
+[node name="game_title" type="TextureRect" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_o6rv3")
+stretch_mode = 2
+
+[node name="press_any_key" type="TextureRect" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_ehmjv")
+stretch_mode = 2
