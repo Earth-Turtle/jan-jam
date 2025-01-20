@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://crvna1migwb0s"]
 
-[ext_resource type="PackedScene" uid="uid://dloh77ybqwob5" path="res://scenes/player.tscn" id="1_cykmj"]
+[ext_resource type="PackedScene" uid="uid://dloh77ybqwob5" path="res://entities/player.tscn" id="1_cykmj"]
 [ext_resource type="TileSet" uid="uid://bmdmqsmedw10g" path="res://tilemaps/environmentmap.tres" id="1_plw7w"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pqe5u"]
@@ -9,7 +9,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_cykmj")]
 z_index = 1
-position = Vector2(1134, 508)
+position = Vector2(1172, 494)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 position = Vector2(-240, 0)
@@ -27,6 +27,7 @@ tile_set = ExtResource("1_plw7w")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 collision_layer = 2
+metadata/_edit_lock_ = true
 
 [node name="WorldBoundNorth" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(960, 0)
@@ -52,7 +53,7 @@ shape = SubResource("WorldBoundaryShape2D_pqe5u")
 debug_color = Color(1, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(894, 508)
+position = Vector2(932, 494)
 limit_left = -480
 limit_top = 0
 limit_right = 1944
