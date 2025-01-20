@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqkau4n117xvi"]
+
+[ext_resource type="Texture2D" uid="uid://crt80r7o3b5n6" path="res://resources/NPC_placeholder.png" id="1_ougho"]
+[ext_resource type="Texture2D" uid="uid://cr2nrrt0rm0ht" path="res://resources/NPC_placeholder - Copy.png" id="2_oysna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk2ja"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b18y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ougho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oysna")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[node name="Civilian" type="CharacterBody2D"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+scale = Vector2(17.27, 17.27)
+shape = SubResource("RectangleShape2D_sk2ja")
+one_way_collision_margin = 0.0
+debug_color = Color(0.952941, 0.121569, 0.447059, 0.894118)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0b18y")
+animation = &"walk"
