@@ -1,0 +1,79 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bmdmqsmedw10g"]
+
+[ext_resource type="Texture2D" uid="uid://njlarryficcr" path="res://tilemaps/EnvironmentTileMap.png" id="1_lk5uj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rnfa"]
+texture = ExtResource("1_lk5uj")
+texture_region_size = Vector2i(18, 18)
+2:0/0 = 0
+2:0/0/terrain = 0
+3:0/0 = 0
+3:0/0/terrain = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/terrains_peering_bit/right_side = 0
+5:0/0/terrains_peering_bit/bottom_side = 0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 0
+6:0/0/terrains_peering_bit/right_side = 0
+6:0/0/terrains_peering_bit/bottom_side = 0
+6:0/0/terrains_peering_bit/left_side = 0
+1:1/0 = 0
+1:1/0/terrain = 0
+2:1/0 = 0
+2:1/0/terrain = 0
+3:1/0 = 0
+3:1/0/terrain = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/terrains_peering_bit/right_side = 0
+5:1/0/terrains_peering_bit/bottom_side = 0
+6:1/0 = 0
+6:1/0/terrain_set = 0
+6:1/0/terrain = 0
+6:1/0/terrains_peering_bit/right_side = 0
+6:1/0/terrains_peering_bit/bottom_side = 0
+6:1/0/terrains_peering_bit/left_side = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+5:2/0/terrain_set = 0
+5:2/0/terrain = 0
+5:2/0/terrains_peering_bit/right_side = 0
+5:2/0/terrains_peering_bit/bottom_side = 0
+5:2/0/terrains_peering_bit/left_side = 0
+5:2/0/terrains_peering_bit/top_side = 0
+6:2/0 = 0
+6:2/0/terrain_set = 0
+6:2/0/terrain = 0
+6:2/0/terrains_peering_bit/right_side = 0
+6:2/0/terrains_peering_bit/bottom_side = 0
+6:2/0/terrains_peering_bit/left_side = 0
+6:2/0/terrains_peering_bit/top_side = 0
+7:2/0 = 0
+7:2/0/terrain_set = 0
+7:2/0/terrain = 0
+7:2/0/terrains_peering_bit/left_side = 0
+7:2/0/terrains_peering_bit/top_side = 0
+0:0/0 = 0
+0:0/0/terrain = 0
+1:0/0 = 0
+1:0/0/terrain = 0
+4:0/0 = 0
+4:0/0/terrain = 0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+7:1/0/terrain = 0
+7:1/0/terrains_peering_bit/left_side = 0
+7:1/0/terrains_peering_bit/top_side = 0
+
+[resource]
+tile_size = Vector2i(18, 18)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "path"
+terrain_set_0/terrain_0/color = Color(0.533205, 0.529046, 0.517737, 1)
+sources/0 = SubResource("TileSetAtlasSource_3rnfa")

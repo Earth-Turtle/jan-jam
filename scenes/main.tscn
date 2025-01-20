@@ -1,13 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://so388ahepwj5"]
 
-[ext_resource type="PackedScene" uid="uid://dloh77ybqwob5" path="res://scenes/player.tscn" id="1_jfbpv"]
+[ext_resource type="PackedScene" uid="uid://crvna1migwb0s" path="res://scenes/level0.tscn" id="2_pqgfn"]
 
 [node name="Main" type="Node"]
 
-[node name="player" parent="." instance=ExtResource("1_jfbpv")]
-position = Vector2(1160, 545)
+[node name="Level0" parent="." instance=ExtResource("2_pqgfn")]
+z_index = -1
+metadata/_edit_lock_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 480.0
 offset_bottom = 1080.0
 color = Color(0.39635, 0.235788, 0.655669, 1)

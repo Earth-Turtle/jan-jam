@@ -1,8 +1,7 @@
-extends Node2D
+extends CharacterBody2D
 
 
 var max_velocity:float = 500.0
-var velocity:Vector2 = Vector2(0.0, 0.0)
 var acceleration:float = 3000.0
 var deceleration:float = 3000.0
 
@@ -22,7 +21,7 @@ func _physics_process(delta:float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 		
-	position += velocity * delta
+	move_and_slide()
 	
 
 
