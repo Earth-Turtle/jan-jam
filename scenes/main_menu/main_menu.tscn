@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhemy5xe7i3pb"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8yswk"]
+[ext_resource type="Shader" path="res://scenes/main_menu/main_menu_background.gdshader" id="2_7b68i"]
+[ext_resource type="Texture2D" uid="uid://chysqtfg01r41" path="res://resources/main_menu_background_tile.png" id="3_764h7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j43m"]
+bg_color = Color(0.816823, 0.20825, 9.62615e-08, 1)
+skew = Vector2(0.295, 0)
+border_width_left = 2
+border_width_top = 3
+border_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxx5m"]
+bg_color = Color(0.816823, 0.20825, 9.62615e-08, 1)
+skew = Vector2(0.295, 0)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3wh6"]
+bg_color = Color(0.693784, 0.171098, 3.85046e-07, 1)
+skew = Vector2(0.295, 0)
+border_width_left = 2
+border_width_top = 3
+border_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_wa1np"]
+Button/styles/hover = SubResource("StyleBoxFlat_5j43m")
+Button/styles/normal = SubResource("StyleBoxFlat_qxx5m")
+Button/styles/pressed = SubResource("StyleBoxFlat_i3wh6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xie2x"]
+shader = ExtResource("2_7b68i")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wa1np")
+script = ExtResource("1_8yswk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_xie2x")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1680.0
+offset_bottom = -945.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+texture = ExtResource("3_764h7")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Title" type="Button" parent="."]
+layout_mode = 2
+offset_left = 556.0
+offset_top = 221.0
+offset_right = 1093.0
+offset_bottom = 290.0
+text = "ALL SYSTEMS ONLINE"
+autowrap_mode = 3
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 352.0
+offset_top = 696.0
+offset_right = 1336.0
+offset_bottom = 808.0
+text = "PRESS ANY BUTTON"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
