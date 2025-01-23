@@ -1,8 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhemy5xe7i3pb"]
+[gd_scene load_steps=5 format=3 uid="uid://dhemy5xe7i3pb"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3s4g0"]
-[ext_resource type="Texture2D" uid="uid://dg3ihiiarvf1e" path="res://resources/title.png" id="1_o6rv3"]
-[ext_resource type="Texture2D" uid="uid://buen8omv8amnn" path="res://resources/press_to_start.png" id="2_ehmjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j43m"]
+bg_color = Color(0.816823, 0.20825, 9.62615e-08, 1)
+skew = Vector2(0.295, 0)
+border_width_left = 2
+border_width_top = 3
+border_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxx5m"]
+bg_color = Color(0.816823, 0.20825, 9.62615e-08, 1)
+skew = Vector2(0.295, 0)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.25098, 0.0784314, 0.0117647, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 5)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_wa1np"]
+Button/styles/hover = SubResource("StyleBoxFlat_5j43m")
+Button/styles/normal = SubResource("StyleBoxFlat_qxx5m")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +41,7 @@ offset_left = 120.0
 offset_top = 80.0
 offset_right = 1800.0
 offset_bottom = 1000.0
+theme = SubResource("Theme_wa1np")
 script = ExtResource("1_3s4g0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -27,18 +58,21 @@ theme_override_constants/margin_bottom = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Title" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("1_o6rv3")
+text = "ALL SYSTEMS ONLINE"
+autowrap_mode = 3
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-icon = ExtResource("2_ehmjv")
+text = "PRESS ANY BUTTON"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
-text = "Settings"
+text = "SETTINGS"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
