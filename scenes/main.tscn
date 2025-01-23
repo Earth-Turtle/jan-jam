@@ -14,3 +14,5 @@ metadata/_edit_lock_ = true
 offset_right = 480.0
 offset_bottom = 1080.0
 color = Color(0.39635, 0.235788, 0.655669, 1)
+
+[node name="SubViewport" type="SubViewport" parent="."]
