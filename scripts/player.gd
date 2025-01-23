@@ -25,7 +25,7 @@ func _physics_process(delta:float) -> void:
 	velocity = velocity.move_toward(direction * max_velocity, acceleration * delta)
 		
 	move_and_slide()
-	$Sprite2D2.rotation = velocity.angle() + (PI / 2)
+	look_at(transform.origin + velocity)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
