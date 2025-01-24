@@ -48,6 +48,7 @@ shadow_size = 1
 anti_aliasing = false
 
 [sub_resource type="Theme" id="Theme_wa1np"]
+Button/font_sizes/font_size = 51
 Button/styles/hover = SubResource("StyleBoxFlat_5j43m")
 Button/styles/normal = SubResource("StyleBoxFlat_qxx5m")
 Button/styles/pressed = SubResource("StyleBoxFlat_i3wh6")
@@ -102,19 +103,19 @@ text = "SETTINGS"
 
 [node name="Title" type="Button" parent="."]
 layout_mode = 2
-offset_left = 556.0
-offset_top = 221.0
-offset_right = 1093.0
-offset_bottom = 290.0
+offset_left = 613.0
+offset_top = 186.0
+offset_right = 1301.0
+offset_bottom = 276.0
 text = "ALL SYSTEMS ONLINE"
 autowrap_mode = 3
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
-offset_left = 352.0
-offset_top = 696.0
-offset_right = 1336.0
-offset_bottom = 808.0
+offset_left = 460.0
+offset_top = 631.0
+offset_right = 1444.0
+offset_bottom = 743.0
 text = "PRESS ANY BUTTON"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

@@ -1,8 +1,67 @@
-[gd_scene load_steps=3 format=3 uid="uid://b54npdlvdw5ip"]
+[gd_scene load_steps=11 format=3 uid="uid://b54npdlvdw5ip"]
 
+[ext_resource type="FontFile" uid="uid://bv00d1e12mm5a" path="res://resources/key_icons/Tiny5-Regular.ttf" id="1_1u63l"]
 [ext_resource type="PackedScene" uid="uid://crvna1migwb0s" path="res://scenes/level0.tscn" id="1_dfkna"]
+[ext_resource type="Texture2D" uid="uid://c4a32byb6hsym" path="res://resources/key_icons/aso_up.png" id="2_g35l6"]
+[ext_resource type="Texture2D" uid="uid://bu83lh4fv62ax" path="res://resources/key_icons/aso_left.png" id="3_pqvnf"]
+[ext_resource type="Texture2D" uid="uid://dwjtis43ysp76" path="res://resources/key_icons/aso_down.png" id="4_egbvg"]
+[ext_resource type="Texture2D" uid="uid://bb7ct2t7peuby" path="res://resources/key_icons/aso_right.png" id="5_7d2si"]
 
 [sub_resource type="Theme" id="Theme_7c4a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el7gj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+skew = Vector2(0.1, 0)
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.8, 0.8, 0.290196)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vekmt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_0wb86"]
+default_font = ExtResource("1_1u63l")
+default_font_size = 20
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 62
+Button/fonts/font = ExtResource("1_1u63l")
+Button/styles/normal = SubResource("StyleBoxFlat_el7gj")
+Button/styles/pressed = SubResource("StyleBoxFlat_vekmt")
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 15
@@ -17,15 +76,99 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 theme = SubResource("Theme_7c4a1")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-
 [node name="ColorRect" type="ColorRect" parent="PanelContainer"]
 layout_mode = 2
 color = Color(0, 0.216246, 0.415621, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0wb86")
+theme_override_constants/separation = 90
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "W"
+icon_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Button4" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+text = "A"
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+text = "S"
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+text = "D"
+icon_alignment = 1
+
+[node name="GridContainer2" type="GridContainer" parent="PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "
+"
+icon = ExtResource("2_g35l6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ColorRect2" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Button4" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("3_pqvnf")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button5" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("4_egbvg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button6" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("5_7d2si")
+icon_alignment = 1
+expand_icon = true
 
 [node name="PanelContainer2" type="SubViewportContainer" parent="."]
 layout_mode = 2
