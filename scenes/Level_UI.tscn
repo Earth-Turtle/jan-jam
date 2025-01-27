@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b54npdlvdw5ip"]
 
 [ext_resource type="FontFile" uid="uid://bv00d1e12mm5a" path="res://resources/key_icons/Tiny5-Regular.ttf" id="1_1u63l"]
-[ext_resource type="PackedScene" uid="uid://crvna1migwb0s" path="res://scenes/level0.tscn" id="1_dfkna"]
+[ext_resource type="PackedScene" uid="uid://crvna1migwb0s" path="res://scenes/levels/level1.tscn" id="1_dfkna"]
 [ext_resource type="Texture2D" uid="uid://c4a32byb6hsym" path="res://resources/key_icons/aso_up.png" id="2_g35l6"]
 [ext_resource type="Texture2D" uid="uid://bu83lh4fv62ax" path="res://resources/key_icons/aso_left.png" id="3_pqvnf"]
 [ext_resource type="Texture2D" uid="uid://dwjtis43ysp76" path="res://resources/key_icons/aso_down.png" id="4_egbvg"]
@@ -63,40 +63,40 @@ Button/fonts/font = ExtResource("1_1u63l")
 Button/styles/normal = SubResource("StyleBoxFlat_el7gj")
 Button/styles/pressed = SubResource("StyleBoxFlat_vekmt")
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="Full screen" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Button display" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 theme = SubResource("Theme_7c4a1")
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+[node name="Controls background color" type="ColorRect" parent="Button display"]
 layout_mode = 2
 color = Color(0, 0.216246, 0.415621, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Button display"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button display/CenterContainer"]
 layout_mode = 2
 theme = SubResource("Theme_0wb86")
 theme_override_constants/separation = 90
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="WASD display" type="GridContainer" parent="Button display/CenterContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Transparent placeholder" type="ColorRect" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Button2" type="Button" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 shortcut_feedback = false
@@ -104,37 +104,37 @@ shortcut_in_tooltip = false
 text = "W"
 icon_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Transparent placeholder2" type="ColorRect" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Button4" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Button4" type="Button" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 text = "A"
 icon_alignment = 1
 
-[node name="Button5" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Button5" type="Button" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 text = "S"
 icon_alignment = 1
 
-[node name="Button6" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+[node name="Button6" type="Button" parent="Button display/CenterContainer/VBoxContainer/WASD display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 text = "D"
 icon_alignment = 1
 
-[node name="GridContainer2" type="GridContainer" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="Arrow display" type="GridContainer" parent="Button display/CenterContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Transparent placeholder3" type="ColorRect" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Button2" type="Button" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 shortcut_feedback = false
@@ -145,39 +145,39 @@ icon = ExtResource("2_g35l6")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ColorRect2" type="ColorRect" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Transparent placeholder4" type="ColorRect" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Button4" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Button4" type="Button" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 icon = ExtResource("3_pqvnf")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button5" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Button5" type="Button" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 icon = ExtResource("4_egbvg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button6" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer/GridContainer2"]
+[node name="Button6" type="Button" parent="Button display/CenterContainer/VBoxContainer/Arrow display"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 icon = ExtResource("5_7d2si")
 icon_alignment = 1
 expand_icon = true
 
-[node name="PanelContainer2" type="SubViewportContainer" parent="."]
+[node name="Level view" type="SubViewportContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="PanelContainer2"]
+[node name="SubViewport" type="SubViewport" parent="Level view"]
 handle_input_locally = false
 size = Vector2i(1474, 1080)
 render_target_update_mode = 4
 
-[node name="Level0" parent="PanelContainer2/SubViewport" instance=ExtResource("1_dfkna")]
+[node name="Level0" parent="Level view/SubViewport" instance=ExtResource("1_dfkna")]

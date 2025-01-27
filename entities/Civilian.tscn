@@ -1,12 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqkau4n117xvi"]
+[gd_scene load_steps=8 format=3 uid="uid://cqkau4n117xvi"]
 
+[ext_resource type="Script" path="res://entities/civilian.gd" id="1_5uxhq"]
+[ext_resource type="Script" path="res://scripts/hitbox.gd" id="1_c6jrl"]
 [ext_resource type="Texture2D" uid="uid://crt80r7o3b5n6" path="res://resources/NPC_placeholder.png" id="1_ougho"]
 [ext_resource type="Texture2D" uid="uid://cr2nrrt0rm0ht" path="res://resources/NPC_placeholder - Copy.png" id="2_oysna"]
+[ext_resource type="Texture2D" uid="uid://c3yvpswlyc47q" path="res://resources/dead_npc.png" id="3_1to3o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk2ja"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dctf5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0b18y"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1to3o")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_ougho")
@@ -19,14 +30,24 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Civilian" type="CharacterBody2D"]
+[node name="Civilian" type="Node2D"]
+script = ExtResource("1_5uxhq")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(17.27, 17.27)
-shape = SubResource("RectangleShape2D_sk2ja")
-one_way_collision_margin = 0.0
-debug_color = Color(0.952941, 0.121569, 0.447059, 0.894118)
+script = ExtResource("1_c6jrl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_dctf5")
+
+[node name="Timer" type="Timer" parent="Hitbox"]
+one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0b18y")
 animation = &"walk"
+
+[connection signal="civilian_death" from="." to="." method="_on_civilian_death"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_civilian_hitbox_body_entered"]
+[connection signal="timeout" from="Hitbox/Timer" to="Hitbox" method="_on_timer_timeout"]

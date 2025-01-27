@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfai8y8nkhhmn"]
+
+[ext_resource type="AudioStream" uid="uid://bc26pu02ebidp" path="res://resources/basic_main_loop.wav" id="1_i202s"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="2_0jywh"]
+
+[node name="AudioManager" type="AudioStreamPlayer"]
+stream = ExtResource("1_i202s")
+autoplay = true
+script = ExtResource("2_0jywh")

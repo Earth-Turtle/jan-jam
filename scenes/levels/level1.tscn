@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://crvna1migwb0s"]
+[gd_scene load_steps=5 format=4 uid="uid://crvna1migwb0s"]
 
 [ext_resource type="PackedScene" uid="uid://dloh77ybqwob5" path="res://entities/player.tscn" id="1_cykmj"]
 [ext_resource type="TileSet" uid="uid://bmdmqsmedw10g" path="res://resources/tilemaps/environmentmap.tres" id="1_plw7w"]
+[ext_resource type="PackedScene" uid="uid://cqkau4n117xvi" path="res://entities/Civilian.tscn" id="3_q3j6o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pqe5u"]
 
@@ -59,8 +60,6 @@ limit_right = 1944
 limit_bottom = 1728
 editor_draw_limits = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -480.0
-offset_bottom = 1080.0
-color = Color(0.39635, 0.235788, 0.655669, 1)
+[node name="Civilian" parent="." instance=ExtResource("3_q3j6o")]
+position = Vector2(1001, 356)
+scale = Vector2(0.21, 0.21)

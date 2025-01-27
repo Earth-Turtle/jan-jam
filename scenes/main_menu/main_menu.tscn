@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhemy5xe7i3pb"]
+[gd_scene load_steps=10 format=3 uid="uid://dhemy5xe7i3pb"]
 
+[ext_resource type="FontFile" uid="uid://bv00d1e12mm5a" path="res://resources/key_icons/Tiny5-Regular.ttf" id="1_3dp1x"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8yswk"]
 [ext_resource type="Shader" path="res://scenes/main_menu/main_menu_background.gdshader" id="2_7b68i"]
 [ext_resource type="Texture2D" uid="uid://chysqtfg01r41" path="res://resources/main_menu_background_tile.png" id="3_764h7"]
@@ -49,6 +50,7 @@ anti_aliasing = false
 
 [sub_resource type="Theme" id="Theme_wa1np"]
 Button/font_sizes/font_size = 51
+Button/fonts/font = ExtResource("1_3dp1x")
 Button/styles/hover = SubResource("StyleBoxFlat_5j43m")
 Button/styles/normal = SubResource("StyleBoxFlat_qxx5m")
 Button/styles/pressed = SubResource("StyleBoxFlat_i3wh6")
@@ -65,6 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wa1np")
 script = ExtResource("1_8yswk")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_xie2x")

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pirate Jam Jan 2025"
-run/main_scene="res://scenes/main_menu/main_menu.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://audio_manager.tscn"
 
 [display]
 
